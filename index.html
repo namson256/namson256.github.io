@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naim | Data Engineering ePortfolio</title>
+    <title>Naim Abdullah | Data Engineering Portfolio</title>
     <style>
         /* Modern Design System & Variables */
         :root {
-            --bg-dark: #070a0e;
-            --bg-surface: rgba(22, 27, 34, 0.4);
+            --bg-dark: #05070a;
+            --bg-surface: rgba(13, 20, 30, 0.45);
             --text-primary: #f0f6fc;
             --text-secondary: #8b949e;
             --accent-cyan: #00f2fe;
             --accent-blue: #4facfe;
-            --border-glow: rgba(79, 172, 254, 0.2);
+            --accent-gold: #ffd700;
+            --border-glow: rgba(79, 172, 254, 0.15);
             --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -35,32 +36,45 @@
             position: relative;
         }
 
-        /* Ambient Background Glows */
+        /* Animated Ambient Background Glows */
         body::before, body::after {
             content: '';
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
             z-index: -1;
-            filter: blur(40px);
+            filter: blur(60px);
+            animation: pulse 8s infinite alternate;
         }
         body::before { top: -10%; left: -10%; }
-        body::after { bottom: -10%; right: -10%; }
+        body::after { bottom: -10%; right: -10%; animation-delay: 4s; }
+
+        @keyframes pulse {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.8; }
+            100% { transform: scale(1.2) translate(30px, 20px); opacity: 1; }
+        }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 90%;
-            padding: 60px 20px;
+            padding: 80px 20px;
             position: relative;
             z-index: 1;
         }
 
-        /* Glassmorphic Header Design */
+        /* Hero Header Styling */
         header {
             margin-bottom: 60px;
             position: relative;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .badge {
@@ -68,43 +82,82 @@
             background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
             border: 1px solid var(--accent-blue);
             color: var(--accent-cyan);
-            padding: 6px 14px;
+            padding: 6px 16px;
             border-radius: 50px;
             font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+        }
+
+        .badge.gold {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 170, 0, 0.1));
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #ffffff 30%, #a5c7f7 100%);
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 40%, #a5c7f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         header p {
             color: var(--text-secondary);
-            font-size: 1.15rem;
-            line-height: 1.7;
-            max-width: 700px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 750px;
         }
 
-        /* Grid Layout Configuration */
-        .section-title {
-            font-size: 1.1rem;
+        /* Quick Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            margin-bottom: 5px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card p {
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Title Layout */
+        .section-title {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin: 40px 0 25px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .section-title::after {
@@ -114,37 +167,34 @@
             background: linear-gradient(90deg, var(--border-glow), transparent);
         }
 
-        .repo-grid {
+        /* High-End Bento Grid Layout */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
-        /* Next-Gen Bento Cards */
         .card {
             background: var(--bg-surface);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
             padding: 35px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            text-decoration: none;
-            color: var(--text-primary);
             position: relative;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            overflow: hidden;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
         }
 
-        /* Subtle Gradient Border Shift on Hover */
         .card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 1px; 
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -156,26 +206,31 @@
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            background: rgba(22, 27, 34, 0.7);
-            box-shadow: 0 15px 40px rgba(0, 242, 254, 0.1);
+            transform: translateY(-6px);
+            background: rgba(18, 26, 38, 0.8);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.08);
+            border-color: rgba(0, 242, 254, 0.2);
         }
 
-        .card:hover::before {
-            opacity: 1;
+        .card:hover::before { opacity: 1; }
+
+        /* Card Content Inner Elements */
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            color: #ffffff;
             letter-spacing: -0.5px;
             transition: color 0.3s ease;
         }
 
-        .card:hover h3 {
-            color: var(--accent-cyan);
-        }
+        .card:hover h3 { color: var(--accent-cyan); }
 
         .card p {
             color: var(--text-secondary);
@@ -185,55 +240,60 @@
             flex-grow: 1;
         }
 
-        /* Technical Tags Area */
+        /* Specialized Styling for Awards vs Projects */
+        .award-ribbon {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Technology & Skill Tag Clouds */
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 30px;
+            margin-top: auto;
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 4px 10px;
-            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 5px 12px;
+            border-radius: 8px;
             font-size: 0.75rem;
             color: #a5c7f7;
             font-family: monospace;
         }
 
-        /* Action Buttons */
-        .btn {
+        /* Layout Footer & Contact links */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--accent-blue);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.3s ease;
         }
 
-        .btn svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover .btn {
+        footer a {
             color: var(--accent-cyan);
+            text-decoration: none;
+            margin-left: 15px;
+            transition: color 0.3s;
         }
+        footer a:hover { color: #ffffff; text-decoration: underline; }
 
-        .card:hover .btn svg {
-            transform: translateX(5px);
-        }
-
-        /* Responsive Layout Tweaks */
+        /* Smooth Media Queries for Mobile Responsive Control */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.3rem; }
+            header h1 { font-size: 2.5rem; }
             .container { padding: 40px 15px; }
             .card { padding: 25px; }
+            .stats-bar { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -241,55 +301,138 @@
 
     <div class="container">
         <header>
-            <span class="badge">Data Engineering</span>
-            <h1>Hi, I'm Naim 👋</h1>
-            <p>Welcome to my academic ePortfolio. I am a Computer Science student specializing in Data Engineering at UTM. Building responsive code, processing scale, and documenting my technical journey year by year.</p>
+            <div class="badge-container">
+                <span class="badge">Data Engineering</span>
+                <span class="badge gold">UTM Merit Scholar</span>
+            </div>
+            <h1>Hi, I'm Naim Abdullah 👋</h1>
+            <p>Computer Science undergrad specializing in Data Engineering at Universiti Teknologi Malaysia. Passionate about building robust backend infrastructure, handling large-scale datasets, and engineering data experiences that look as sharp as they operate.</p>
         </header>
 
+        <section class="stats-bar">
+            <div class="stat-card">
+                <h4>3.93</h4>
+                <p>Current UTM CGPA</p>
+            </div>
+            <div class="stat-card">
+                <h4>4.00</h4>
+                <p>Matriculation GPA</p>
+            </div>
+            <div class="stat-card">
+                <h4>Gold Medal</h4>
+                <p>DICE 3.0 Game Dev</p>
+            </div>
+            <div class="stat-card">
+                <h4>1st Place</h4>
+                <p>Enovation Challenge</p>
+            </div>
+        </section>
+
         <main>
-            <h2 class="section-title">Timeline & Repositories</h2>
-            
-            <div class="repo-grid">
-                <a href="https://github.com/namson256/1YEAR" class="card" target="_blank">
+            <h2 class="section-title">Featured Systems & Projects</h2>
+            <div class="grid">
+                
+                <div class="card">
                     <div>
-                        <h3>1YEAR</h3>
-                        <p>Laying down the core structural blocks of programming, system logic, and basic mathematical infrastructure.</p>
-                        <div class="tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">Discrete Structure</span>
-                            <span class="tag">Computational Logic</span>
+                        <div class="card-header">
+                            <h3>KADA Cooperative System</h3>
                         </div>
+                        <p>Led the development of an integrated, cross-module structural web application featuring loan processing automation and secure membership registration workflows.</p>
                     </div>
-                    <span class="btn">Explore Core Docs <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a>
+                    <div class="tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">System Integration</span>
+                    </div>
+                </div>
 
-                <a href="https://github.com/namson256/2YEAR" class="card" target="_blank">
+                <div class="card">
                     <div>
-                        <h3>2YEAR</h3>
-                        <p>Transitioning into structured algorithms, data architectural environments, and foundational pipeline design.</p>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Data Structures</span>
-                            <span class="tag">Database / SQL</span>
+                        <div class="card-header">
+                            <h3>Big Fish Game</h3>
                         </div>
+                        <p>Architected an optimized, performance-driven Unity game. Managed seamless graphic asset pipelines, built core game loops, and injected fluid interactive power-up features.</p>
                     </div>
-                    <span class="btn">Explore Core Docs <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Game Architecture</span>
+                        <span class="tag">Asset Optimization</span>
+                    </div>
+                </div>
 
-                <a href="https://github.com/namson256/3YEAR" class="card" target="_blank">
+            </div>
+
+            <h2 class="section-title">Championships & Certifications</h2>
+            <div class="grid">
+
+                <div class="card">
                     <div>
-                        <h3>3YEAR</h3>
-                        <p>Advanced cluster computing analytics, enterprise distributed systems, and real-time big data engineering implementations.</p>
-                        <div class="tags">
-                            <span class="tag">Big Data Analytics</span>
-                            <span class="tag">Cloud Architecture</span>
-                            <span class="tag">Capstone Project</span>
+                        <div class="card-header">
+                            <h3>Business Enovation Challenge</h3>
+                            <span class="award-ribbon">🏆 1st Place</span>
                         </div>
+                        <p>Engineered an opportunity matchmaking system designed to automatically bridge students with active tech hackathons, venture grants, and corporate sponsorships.</p>
                     </div>
-                    <span class="btn">Explore Core Docs <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a>
+                    <div class="tags">
+                        <span class="tag">Innovation Tech</span>
+                        <span class="tag">System Architecture</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3>DICE 3.0 Development</h3>
+                            <span class="award-ribbon">🥇 Gold Medal</span>
+                        </div>
+                        <p>Honored for outstanding technical excellence and design creativity in complex, highly responsive interactive engine logic development via Unity.</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Interactive Media</span>
+                        <span class="tag">Unity Engine</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3>MDIT X DOSM Datathon</h3>
+                            <span class="award-ribbon">📊 Dashboard Insights</span>
+                        </div>
+                        <p>Built an interactive economic insight platform parsing local government datasets to model and analyze systemic wealth gaps across B40, M40, and T20 income clusters.</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Strategic One</span>
+                        <span class="tag">Data Visualization</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <h3>Skill2Work Certification</h3>
+                            <span class="award-ribbon">💻 Microsoft Cert</span>
+                        </div>
+                        <p>Certified in computing fundamentals with practical core knowledge in high-scale data center environments, operational design, and infrastructure management.</p>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Cloud Infrastructure</span>
+                        <span class="tag">Data Center Ops</span>
+                    </div>
+                </div>
+
             </div>
         </main>
+
+        <footer>
+            <p>Let's connect: 
+                <a href="mailto:naim20600@gmail.com">naim20600@gmail.com</a> | 
+                <a href="tel:+60122287866">+60 12-228-7866</a>
+            </p>
+        </footer>
     </div>
 
 </body>
