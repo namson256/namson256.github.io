@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naim | Data Engineering Hub</title>
+    <title>Muhammad Naim | Data Engineering Portfolio</title>
     <style>
-        /* Luxury Warm Tech Design System */
+        /* Cheerful & Warm High-Contrast Design System */
         :root {
-            --bg-dark: #0a0406; /* Deepest Espresso Velvet Black */
-            --bg-surface: rgba(26, 12, 16, 0.55); /* Transparent Rich Maroon-Chocolate */
-            --text-primary: #fffdfa; /* Crisp Alabaster White */
-            --text-secondary: #c9b7a7; /* Elegant Muted Nude / Latte */
-            --accent-maroon: #d62839; /* Glowing Rich Velvet Maroon */
-            --accent-nude: #e6ccb2; /* Luxury Champagne Nude */
-            --accent-gold: #e0a96d; /* Deep Autumn Gold */
-            --border-glow: rgba(214, 40, 57, 0.15);
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --bg-body: #fbf7f0;       /* Delightful Cream / Soft Nude */
+            --bg-card: #ffffff;       /* Crisp Stark White */
+            --text-main: #36221c;     /* Deep Espresso Chocolate (High Contrast Text) */
+            --text-muted: #7a655f;    /* Elegant Warm Cocoa */
+            --accent-maroon: #b01e31; /* Vibrant, Cheerful Festive Maroon */
+            --accent-nude: #f3e6d8;   /* Warm Soft Latte Highlight */
+            --accent-gold: #d99136;   /* Bright Autumn Amber */
+            --shadow-smooth: rgba(54, 34, 28, 0.06);
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         * {
@@ -27,35 +27,39 @@
 
         body {
             font-family: var(--font-stack);
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
+            background-color: var(--bg-body);
+            color: var(--text-main);
             min-height: 100vh;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Custom Scrollbar to match theme */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: rgba(214, 40, 57, 0.3); border-radius: 4px; }
+        /* Fun, Friendly Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb { 
+            background: var(--accent-nude); 
+            border-radius: 10px; 
+            border: 2px solid var(--bg-body);
+        }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-maroon); }
 
-        /* Floating Luxury Navigation Bar */
+        /* Floating Light Glassmorphic Navigation Bar */
         nav {
             position: fixed;
-            top: 0; left: 0; width: 100%;
+            top: 15px; left: 50%;
+            transform: translateX(-50%);
+            width: 90%; max-width: 1100px;
             z-index: 100;
-            background: rgba(10, 4, 6, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(54, 34, 28, 0.08);
+            border-radius: 50px;
+            padding: 14px 28px;
+            box-shadow: 0 8px 32px var(--shadow-smooth);
         }
 
         .nav-container {
-            max-width: 1100px;
-            width: 90%;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,427 +67,490 @@
 
         .logo {
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, var(--accent-maroon), var(--accent-nude));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent-maroon);
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .nav-links a:hover, .nav-links a.active { color: var(--accent-maroon); }
-
-        /* Velvet & Nude Ambient Background Lighting */
-        .ambient-glow {
-            position: absolute;
-            width: 700px;
-            height: 700px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(214, 40, 57, 0.07) 0%, rgba(230, 204, 178, 0.02) 50%, rgba(0, 0, 0, 0) 70%);
-            z-index: -1;
-            filter: blur(90px);
-            pointer-events: none;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-maroon);
+            background: var(--accent-nude);
         }
-        #glow-1 { top: -15%; left: -10%; }
-        #glow-2 { bottom: 5%; right: -10%; }
 
+        /* Container & Grid Systems */
         .container {
             max-width: 1100px;
             width: 90%;
             margin: 0 auto;
-            padding: 140px 0 60px 0;
+            padding: 130px 0 60px 0;
         }
 
-        /* Hero Profile Banner */
-        .hero { margin-bottom: 50px; }
-        
-        .badge-wrapper { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-        .badge {
-            background: rgba(214, 40, 57, 0.08);
-            border: 1px solid rgba(214, 40, 57, 0.35);
-            color: var(--accent-nude);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .badge.gold { border-color: rgba(224, 169, 109, 0.4); color: var(--accent-gold); background: rgba(224, 169, 109, 0.05); }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1.1;
+        /* Clean Section Isolation */
+        section {
+            padding: 50px 0;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 40%, var(--accent-nude) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
-        .hero p { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; max-width: 750px; }
-
-        /* Premium Dashboard Counters */
-        .metrics-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-
-        .metric-card {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .metric-card h3 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-maroon), var(--accent-nude));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 4px;
-        }
-
-        .metric-card p { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Structural Grid Heading */
-        .timeline-title {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Cheerful Section Dividers */
+        .section-header {
             display: flex;
             align-items: center;
             gap: 15px;
-        }
-        .timeline-title::after {
-            content: ''; flex-grow: 1; height: 1px;
-            background: linear-gradient(90deg, rgba(214, 40, 57, 0.25), transparent);
+            margin-bottom: 35px;
         }
 
-        .timeline-stack { display: flex; flex-direction: column; gap: 40px; }
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            position: relative;
+        }
 
-        /* Luxury Bento Card Hubs */
-        .repo-hub-card {
-            background: var(--bg-surface);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+        .section-header .line {
+            flex-grow: 1;
+            height: 3px;
+            background: var(--accent-nude);
+            border-radius: 10px;
+        }
+
+        /* SECTION 1: Personal Information Hero */
+        .hero-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .badge-row { display: flex; gap: 10px; flex-wrap: wrap; }
+        
+        .badge {
+            background: var(--accent-nude);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .badge.maroon-accent { background: var(--accent-maroon); color: white; }
+
+        .hero-layout h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            color: var(--text-main);
+        }
+
+        .hero-layout h1 span { color: var(--accent-maroon); }
+
+        .hero-layout p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 800px;
+        }
+
+        /* Quick Info Key Stats Panel */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(54, 34, 28, 0.06);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 6px 20px var(--shadow-smooth);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(176, 30, 49, 0.1);
+        }
+        .metric-card h3 { font-size: 2.3rem; font-weight: 900; color: var(--accent-maroon); margin-bottom: 5px; }
+        .metric-card p { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
+
+        /* General Card Architecture (Bento Style) */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .cheerful-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(54, 34, 28, 0.05);
             border-radius: 24px;
-            padding: 40px;
+            padding: 35px;
+            box-shadow: 0 10px 30px var(--shadow-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             position: relative;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
-            display: block;
-            transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.2);
         }
 
-        /* Velvet spotlight mouse-tracking glow */
-        .repo-hub-card::before {
+        .cheerful-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            border-color: rgba(176, 30, 49, 0.2);
+        }
+
+        /* Interactive Light Shadow Tracker Overlay */
+        .cheerful-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(214, 40, 57, 0.12), transparent 40%);
+            background: radial-gradient(300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(176, 30, 49, 0.05), transparent 60%);
             z-index: 1; pointer-events: none;
         }
 
-        .repo-hub-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(214, 40, 57, 0.35);
-            background: rgba(36, 16, 22, 0.6);
-        }
-
-        .repo-content { position: relative; z-index: 2; }
-
-        .repo-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .card-body { position: relative; z-index: 2; }
+        
+        .card-tag {
+            align-self: flex-start;
+            background: var(--accent-nude);
+            color: var(--text-main);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
             margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            padding-bottom: 15px;
+            display: inline-block;
         }
+        .card-tag.gold-tag { background: #fdf3e7; color: var(--accent-gold); }
 
-        .repo-title-block { display: flex; align-items: center; gap: 12px; }
-        
-        .repo-icon {
-            width: 20px; height: 20px; color: var(--accent-maroon);
-            fill: currentColor;
-        }
+        .cheerful-card h3 { font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; }
+        .cheerful-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; }
 
-        .repo-hub-card h2 {
-            font-size: 2rem; font-weight: 800; letter-spacing: -1px;
-            background: linear-gradient(135deg, #ffffff 60%, var(--accent-nude) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            transition: color 0.3s;
-        }
-        .repo-hub-card:hover h2 {
-            background: none; -webkit-text-fill-color: initial; color: var(--accent-maroon);
-        }
-
-        .repo-link-btn {
-            font-size: 0.85rem; color: var(--accent-nude); font-weight: 600;
-            display: flex; align-items: center; gap: 6px;
-            transition: color 0.3s;
-        }
-        .repo-link-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform 0.3s; }
-        .repo-hub-card:hover .repo-link-btn svg { transform: translateX(4px); stroke: var(--accent-maroon); }
-        .repo-hub-card:hover .repo-link-btn { color: var(--accent-maroon); }
-
-        .repo-description {
-            color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; max-width: 850px;
-        }
-
-        /* Embedded Inner-Bento Subsections */
-        .sub-milestones {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px; margin-bottom: 30px;
-        }
-
-        .milestone-box {
-            background: rgba(255, 255, 255, 0.015);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 14px; padding: 20px;
-        }
-        .milestone-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .milestone-box h4 { font-size: 1.1rem; font-weight: 700; color: #ffffff; }
-        
-        .milestone-tag {
-            background: rgba(224, 169, 109, 0.08); color: var(--accent-gold);
-            border: 1px solid rgba(224, 169, 109, 0.2);
-            padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
-        }
-        .milestone-box p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
-
-        /* Technology Pill Layouts */
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+        /* Tech Tags Cloud */
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 2; }
         .tag-cloud span {
-            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; color: var(--accent-nude); font-family: monospace;
+            background: #f7f3eb;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
         }
 
-        /* Luxury Layout Footer Layer */
+        /* SECTION 2: Academic Repos Specific Layout */
+        .repo-card { border-left: 6px solid var(--accent-maroon); }
+        .repo-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin: 15px 0 8px 0; }
+        
+        .nested-bullet {
+            font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;
+            margin-bottom: 15px; padding-left: 15px; position: relative;
+        }
+        .nested-bullet::before {
+            content: '•'; color: var(--accent-maroon); position: absolute; left: 0; font-weight: bold;
+        }
+
+        .repo-footer-btn {
+            font-size: 0.85rem; font-weight: 700; color: var(--accent-maroon);
+            display: flex; align-items: center; gap: 5px; margin-top: 15px;
+        }
+        .repo-footer-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.2s; }
+        .cheerful-card:hover .repo-footer-btn svg { transform: translateX(5px); }
+
+        /* Footer Element */
         footer {
-            margin-top: 80px; border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 40px 0; text-align: center; color: var(--text-secondary); font-size: 0.9rem;
+            margin-top: 60px;
+            border-top: 2px solid var(--accent-nude);
+            padding: 40px 0;
+            text-align: center;
         }
-        footer a { color: var(--accent-maroon); text-decoration: none; margin: 0 10px; }
-        footer a:hover { text-decoration: underline; color: var(--text-primary); }
+        footer p { color: var(--text-muted); font-size: 0.95rem; font-weight: 600; }
+        footer a { color: var(--accent-maroon); text-decoration: none; margin: 0 10px; font-weight: 700; }
+        footer a:hover { text-decoration: underline; }
 
+        /* Mobile Optimization */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.6rem; }
+            .hero-layout h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
-            .repo-hub-card { padding: 25px; }
-            .metrics-bar { grid-template-columns: 1fr 1fr; }
+            .bento-grid { grid-template-columns: 1fr; }
+            nav { padding: 12px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow" id="glow-1"></div>
-    <div class="ambient-glow" id="glow-2"></div>
-
     <nav>
         <div class="nav-container">
             <div class="logo">NAIM.DE</div>
             <ul class="nav-links">
-                <li><a href="#about" class="nav-item active">About</a></li>
-                <li><a href="#year1" class="nav-item">Year 1</a></li>
-                <li><a href="#year2" class="nav-item">Year 2</a></li>
-                <li><a href="#year3" class="nav-item">Year 3</a></li>
+                <li><a href="#info" class="nav-item active">Information</a></li>
+                <li><a href="#timeline" class="nav-item">Years & Courses</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
+                <li><a href="#achievements" class="nav-item">Achievements</a></li>
+                <li><a href="#activities" class="nav-item">Activities</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
         
-        <section id="about" class="hero">
-            <div class="badge-wrapper">
-                <span class="badge">Computer Science (Data Engineering)</span>
-                <span class="badge gold">UTM Merit Scholar</span>
+        <section id="info" class="hero-layout">
+            <div class="badge-row">
+                <span class="badge maroon-accent">Computer Science Undergraduate</span>
+                <span class="badge">UTM Merit Scholar</span>
             </div>
-            <h1 id="dynamic-title">Hi, I'm Muhammad Naim</h1>
-            <p>Undergraduate specialization student at Universiti Teknologi Malaysia. Engineering optimized data logic environments, handling distributed clusters, and organizing clean data-driven pipelines architecture.</p>
+            <h1 id="bouncy-title">Hi, I'm Muhammad Naim</h1>
+            <p>A highly proactive and dedicated student specializing in Data Engineering at Universiti Teknologi Malaysia. Focused on creating clean architectural code logic environments, deploying backend automation frameworks, and managing complex physical storage models.</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>3.93</h3>
+                    <p>UTM Current CGPA</p>
+                </div>
+                <div class="metric-card">
+                    <h3>4.00</h3>
+                    <p>Matriculation GPA</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Gold</h3>
+                    <p>DICE 3.0 Honors</p>
+                </div>
+                <div class="metric-card">
+                    <h3>1st</h3>
+                    <p>Enovation Challenge</p>
+                </div>
+            </div>
         </section>
 
-        <section class="metrics-bar">
-            <div class="metric-card">
-                <h3>3.93</h3>
-                <p>UTM CGPA</p>
+
+        <section id="timeline">
+            <div class="section-header">
+                <h2>Academic Repositories & Courses</h2>
+                <div class="line"></div>
             </div>
-            <div class="metric-card">
-                <h3>4.00</h3>
-                <p>Matriculation GPA</p>
-            </div>
-            <div class="metric-card">
-                <h3>Gold Medal</h3>
-                <p>DICE 3.0 Engineering</p>
-            </div>
-            <div class="metric-card">
-                <h3>1st Place</h3>
-                <p>Enovation Challenge</p>
+            <div class="bento-grid">
+                
+                <a href="https://github.com/namson256/1YEAR" target="_blank" class="cheerful-card repo-card">
+                    <div class="card-body">
+                        <span class="card-tag">Freshman Stack</span>
+                        <h3>01 // 1YEAR Repository</h3>
+                        <p>Constructed base algorithmic logic engines, runtime environment parameters, and dynamic asset handling patterns while scoring maximum engineering indexes.</p>
+                        
+                        <h4>Key Course Highlight:</h4>
+                        <div class="nested-bullet">Graduated from Melaka Matriculation College tracking an absolute 4.00 analytical science score baseline.</div>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>C++</span>
+                        <span>Computational Logic</span>
+                        <span>Discrete Structures</span>
+                    </div>
+                    <div class="repo-footer-btn">Launch GitHub Repo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </a>
+
+                <a href="https://github.com/namson256/2YEAR" target="_blank" class="cheerful-card repo-card">
+                    <div class="card-body">
+                        <span class="card-tag">Sophomore Pipelines</span>
+                        <h3>02 // 2YEAR Repository</h3>
+                        <p>Transitioned directly into organizing complex logical arrays, custom operational structures, multi-module backend layers, and normalized schema models.</p>
+                        
+                        <h4>Key Course Highlight:</h4>
+                        <div class="nested-bullet">Focused on advanced relational environment management, object programming systems, and cross-functional scripting.</div>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>Python</span>
+                        <span>SQL Schemas</span>
+                        <span>Data Structures</span>
+                    </div>
+                    <div class="repo-footer-btn">Launch GitHub Repo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </a>
+
+                <a href="https://github.com/namson256/3YEAR" target="_blank" class="cheerful-card repo-card">
+                    <div class="card-body">
+                        <span class="card-tag">Junior Big Data Architecture</span>
+                        <h3>03 // 3YEAR Repository</h3>
+                        <p>Specializing in production metrics analytics orchestration, distributed data engineering environments, cluster monitoring operations, and web dashboards.</p>
+                        
+                        <h4>Key Course Highlight:</h4>
+                        <div class="nested-bullet">Deploying live corporate visualization platforms and tracking system throughput processing optimization.</div>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>Big Data Systems</span>
+                        <span>Cloud Infrastructure</span>
+                        <span>Distributed Logic</span>
+                    </div>
+                    <div class="repo-footer-btn">Launch GitHub Repo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                </a>
+
             </div>
         </section>
 
-        <main>
-            <h3 class="timeline-title">Academic Architecture & Repositories</h3>
-            <div class="timeline-stack">
 
-                <a href="https://github.com/namson256/1YEAR" target="_blank" class="repo-hub-card" id="year1">
-                    <div class="repo-content">
-                        <div class="repo-header">
-                            <div class="repo-title-block">
-                                <svg class="repo-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-3H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
-                                <h2>01 // 1YEAR</h2>
-                            </div>
-                            <span class="repo-link-btn">Explore Codebase <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                        </div>
-                        <p class="repo-description">Laying down foundational systems architecture, algorithmic reasoning, dynamic asset processing logic, and complex structural system computations.</p>
-                        
-                        <div class="sub-milestones">
-                            <div class="milestone-box">
-                                <div class="milestone-top">
-                                    <h4>Big Fish Core Project</h4>
-                                    <span class="milestone-tag">Engine Dev</span>
-                                </div>
-                                <p>Designed a low-latency interactive game loop logic structure utilizing Unity game engine tools and strict execution profiling.</p>
-                            </div>
-                            <div class="milestone-box">
-                                <div class="milestone-top">
-                                    <h4>Matriculation Baseline</h4>
-                                    <span class="milestone-tag">4.00 GPA</span>
-                                </div>
-                                <p>Graduated Melaka Matriculation College with maximum scoring index parameters across analytical sciences.</p>
-                            </div>
-                        </div>
+        <section id="projects">
+            <div class="section-header">
+                <h2>Featured Projects Engineering</h2>
+                <div class="line"></div>
+            </div>
+            <div class="bento-grid">
 
-                        <div class="tag-cloud">
-                            <span>C++</span>
-                            <span>Discrete Structure</span>
-                            <span>Computational Logic</span>
-                            <span>Unity Engine</span>
-                            <span>C#</span>
-                        </div>
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag">Web & Automation Subsystems</span>
+                        <h3>KADA Cooperative System</h3>
+                        <p>Orchestrated the software development lifecycle for a web automation system framework. Engineered high-security automated membership registration pipelines and multi-module financial loan processing calculators.</p>
                     </div>
-                </a>
-
-                <a href="https://github.com/namson256/2YEAR" target="_blank" class="repo-hub-card" id="year2">
-                    <div class="repo-content">
-                        <div class="repo-header">
-                            <div class="repo-title-block">
-                                <svg class="repo-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-3H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
-                                <h2>02 // 2YEAR</h2>
-                            </div>
-                            <span class="repo-link-btn">Explore Codebase <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                        </div>
-                        <p class="repo-description">Transitioning into relational structural databases, pipeline construction scripts, automated enterprise applications, and multi-module systems logic integration.</p>
-                        
-                        <div class="sub-milestones">
-                            <div class="milestone-box">
-                                <div class="milestone-top">
-                                    <h4>KADA Cooperative App</h4>
-                                    <span class="milestone-tag">Lead Dev</span>
-                                </div>
-                                <p>Architected multi-module systems automation handling financial loan requests, secure verification, and member registries via PHP/Python pipelines.</p>
-                            </div>
-                            <div class="milestone-box">
-                                <div class="milestone-top">
-                                    <h4>Business Enovation</h4>
-                                    <span class="milestone-tag">🏆 1st Place</span>
-                                </div>
-                                <p>Won championship ranking for designing a smart software matching network framework targeting student resource allocation.</p>
-                            </div>
-                        </div>
-
-                        <div class="tag-cloud">
-                            <span>Python</span>
-                            <span>Data Structures</span>
-                            <span>Database Systems</span>
-                            <span>SQL Automation</span>
-                            <span>PHP Pipelines</span>
-                        </div>
+                    <div class="tag-cloud">
+                        <span>PHP Core</span>
+                        <span>Python Scripts</span>
+                        <span>HTML5 Ecosystem</span>
+                        <span>System Automation</span>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://github.com/namson256/3YEAR" target="_blank" class="repo-hub-card" id="year3">
-                    <div class="repo-content">
-                        <div class="repo-header">
-                            <div class="repo-title-block">
-                                <svg class="repo-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-3H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
-                                <h2>03 // 3YEAR</h2>
-                            </div>
-                            <span class="repo-link-btn">Explore Codebase <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                        </div>
-                        <p class="repo-description">Deploying production analytics architectures, parsing high-scale government metrics clusters, cloud engineering management, and large-scale dashboard deployment.</p>
-                        
-                        <div class="sub-milestones">
-                            <div class="milestone-box">
-                                <div class="milestone-top">
-                                    <h4>MDIT X DOSM Datathon</h4>
-                                    <span class="milestone-tag">Analytics Win</span>
-                                </div>
-                                <p>Constructed interactive wealth distribution visualization matrices mapping B40/M40/T20 clusters using Strategic One systems.</p>
-                            </div>
-                            <div class="milestone-box">
-                                <div class="milestone-top">
-                                    <h4>DICE 3.0 Development</h4>
-                                    <span class="milestone-tag">🥇 Gold Medal</span>
-                                </div>
-                                <p>Awarded top honor distinctions recognizing high runtime optimization metrics and outstanding software design complexity.</p>
-                            </div>
-                            <div class="milestone-box">
-                                <div class="milestone-top">
-                                    <h4>Skill2Work Microsoft</h4>
-                                    <span class="milestone-tag">Certified</span>
-                                </div>
-                                <p>Earned official credentials specializing in computer science parameters, cloud scaling systems, and data center operations.</p>
-                            </div>
-                        </div>
-
-                        <div class="tag-cloud">
-                            <span>Big Data Analytics</span>
-                            <span>Cloud Infrastructure</span>
-                            <span>Strategic One Dashboarding</span>
-                            <span>Data Centers</span>
-                            <span>Distributed Computing</span>
-                        </div>
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag">Interactive Simulation Engines</span>
+                        <h3>Big Fish Engine Development</h3>
+                        <p>Architected an interactive simulation engine system loop within Unity where complex entities map, expand, and consume. Handled asset compilation and low-latency interaction processing to secure stable runtime limits.</p>
                     </div>
-                </a>
+                    <div class="tag-cloud">
+                        <span>Unity Engine</span>
+                        <span>C# Programming</span>
+                        <span>Asset Pipeline</span>
+                        <span>Graphics Optimization</span>
+                    </div>
+                </div>
 
             </div>
-        </main>
+        </section>
+
+
+        <section id="achievements">
+            <div class="section-header">
+                <h2>Achievements & Certifications</h2>
+                <div class="line"></div>
+            </div>
+            <div class="bento-grid">
+
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag gold-tag">🏆 First Place Winner</span>
+                        <h3>Business Enovation Challenge</h3>
+                        <p>Designed a centralized architectural software platform intentionally aligning students directly to competitive technological hackathons, venture capital grant systems, and corporate funding pipelines.</p>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>System Architecture</span>
+                        <span>Innovation Tech</span>
+                    </div>
+                </div>
+
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag gold-tag">🥇 Gold Medal Honors</span>
+                        <h3>DICE 3.0 Tech Exhibition</h3>
+                        <p>Awarded premium honors distinction for outstanding execution accuracy, game physics structure, and highly optimized processing design loops running inside Unity environments.</p>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>Interactive Engineering</span>
+                        <span>Logic Systems Design</span>
+                    </div>
+                </div>
+
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag gold-tag">📊 National Data Insights</span>
+                        <h3>MDIT X DOSM Datathon</h3>
+                        <p>Parsed national macroeconomic datasets to engineer automated visualization metrics tracking household economic stratification gaps across B40, M40, and T20 income groups using Strategic One systems.</p>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>Strategic One Platform</span>
+                        <span>Data Analytics Visualization</span>
+                    </div>
+                </div>
+
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag gold-tag">💻 Microsoft Cloud Credential</span>
+                        <h3>Skill2Work Certification</h3>
+                        <p>Earned verified technical validation covering computer science parameters, enterprise scale cloud networking models, backend digital operations, and underlying physical data center infrastructure operations.</p>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>Cloud Infrastructure</span>
+                        <span>Data Center Operations</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="activities">
+            <div class="section-header">
+                <h2>Co-Curricular Initiatives & Culture</h2>
+                <div class="line"></div>
+            </div>
+            <div class="bento-grid">
+
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag">EXCO Activity Leader</span>
+                        <h3>PERSAKA 24 Committee</h3>
+                        <p>Actively coordinated core operational logistics workflows, financial workflows, and student management parameters for high-scale student tech events including JARVIS '25 and SUSKOM '24.</p>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>Event Planning</span>
+                        <span>Budgeting Controls</span>
+                        <span>Team Collaboration</span>
+                    </div>
+                </div>
+
+                <div class="cheerful-card">
+                    <div class="card-body">
+                        <span class="card-tag">Traditional Performer</span>
+                        <h3>Gamelan Rebana Orchestra</h3>
+                        <p>Performed cultural orchestration at multiple high-profile institutional programs, refining operational workflow coordination, dedicated collective team unity, and precise execution timing.</p>
+                    </div>
+                    <div class="tag-cloud">
+                        <span>Workflow Synchronization</span>
+                        <span>Cultural Orchestration</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
 
         <footer>
-            <p>Network Terminals: 
+            <p>Connect with me here: 
                 <a href="mailto:naim20600@gmail.com">naim20600@gmail.com</a> | 
                 <a href="tel:+60122287866">+60 12-228-7866</a>
             </p>
         </footer>
+
     </div>
 
     <script>
-        // 1. Mouse Spotlight Tracker Controller (Updated to Maroon Velvet Beam)
-        const cards = document.querySelectorAll('.repo-hub-card');
-        cards.forEach(card => {
+        // 1. Warm Mouse Hover Spotlight Tracking Effect
+        const portfolioCards = document.querySelectorAll('.cheerful-card');
+        portfolioCards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -493,54 +560,54 @@
             });
         });
 
-        // 2. Active Scroll Item Selector Tracking
-        const trackedItems = document.querySelectorAll('.repo-hub-card, .hero');
-        const items = document.querySelectorAll('.nav-item');
+        // 2. Active Section Navbar Synchronizer during Scroll
+        const layoutSections = document.querySelectorAll('section');
+        const navigationPills = document.querySelectorAll('.nav-item');
 
         window.addEventListener('scroll', () => {
-            let activeId = '';
-            trackedItems.forEach(block => {
-                const blockTop = block.offsetTop;
-                if (pageYOffset >= (blockTop - 220)) {
-                    activeId = block.getAttribute('id');
+            let activeSectionId = '';
+            layoutSections.forEach(section => {
+                const triggerPoint = section.offsetTop;
+                if (pageYOffset >= (triggerPoint - 240)) {
+                    activeSectionId = section.getAttribute('id');
                 }
             });
 
-            items.forEach(navLink => {
-                navLink.classList.remove('active');
-                if (navLink.getAttribute('href').slice(1) === activeId) {
-                    navLink.classList.add('active');
+            navigationPills.forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.getAttribute('href').slice(1) === activeSectionId) {
+                    pill.classList.add('active');
                 }
             });
         });
 
-        // 3. Terminal Style Header Array Typer 
-        const label = document.getElementById('dynamic-title');
-        const arrays = ["Hi, I'm Muhammad Naim", "Hi, I'm a Data Engineer", "Hi, I Build Large-Scale Systems"];
-        let count = 0; let characterCount = arrays[count].length; let deletionFlag = false;
+        // 3. Cheerful Array Typetext Rotator Engine
+        const textTarget = document.getElementById('bouncy-title');
+        const titlesArray = ["Hi, I'm Muhammad Naim!", "Hi, I'm a Data Engineer!", "Let's Build Something Great!"];
+        let arrayIndex = 0; let charIndex = titlesArray[arrayIndex].length; let reverseFlag = false;
 
-        function runTyper() {
-            const currentString = arrays[count];
-            if (deletionFlag) {
-                label.innerHTML = currentString.substring(0, characterCount - 1);
-                characterCount--;
+        function textTyperLoop() {
+            const currentTextString = titlesArray[arrayIndex];
+            if (reverseFlag) {
+                textTarget.innerHTML = currentTextString.substring(0, charIndex - 1);
+                charIndex--;
             } else {
-                label.innerHTML = currentString.substring(0, characterCount + 1);
-                characterCount++;
+                textTarget.innerHTML = currentTextString.substring(0, charIndex + 1);
+                charIndex++;
             }
 
-            let typeVelocity = deletionFlag ? 30 : 60;
+            let scriptSpeed = reverseFlag ? 25 : 55;
 
-            if (!deletionFlag && characterCount === currentString.length) {
-                typeVelocity = 2500; deletionFlag = true;
-            } else if (deletionFlag && characterCount === 0) {
-                deletionFlag = false;
-                count = (count + 1) % arrays.length;
-                typeVelocity = 2000;
+            if (!reverseFlag && charIndex === currentTextString.length) {
+                scriptSpeed = 2400; reverseFlag = true;
+            } else if (reverseFlag && charIndex === 0) {
+                reverseFlag = false;
+                arrayIndex = (arrayIndex + 1) % titlesArray.length;
+                scriptSpeed = 1500;
             }
-            setTimeout(runTyper, typeVelocity);
+            setTimeout(textTyperLoop, scriptSpeed);
         }
-        setTimeout(runTyper, 1200);
+        setTimeout(textTyperLoop, 1000);
     </script>
 </body>
 </html>
