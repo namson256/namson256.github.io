@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naim Abdullah | Data Engineering Portfolio</title>
+    <title>Naim | Data Engineering Hub</title>
     <style>
-        /* Modern Futuristic Design System */
+        /* Luxury Warm Tech Design System */
         :root {
-            --bg-dark: #03070c;
-            --bg-surface: rgba(9, 17, 28, 0.6);
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent-cyan: #00f2fe;
-            --accent-blue: #4facfe;
-            --accent-gold: #ffd700;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --bg-dark: #0a0406; /* Deepest Espresso Velvet Black */
+            --bg-surface: rgba(26, 12, 16, 0.55); /* Transparent Rich Maroon-Chocolate */
+            --text-primary: #fffdfa; /* Crisp Alabaster White */
+            --text-secondary: #c9b7a7; /* Elegant Muted Nude / Latte */
+            --accent-maroon: #d62839; /* Glowing Rich Velvet Maroon */
+            --accent-nude: #e6ccb2; /* Luxury Champagne Nude */
+            --accent-gold: #e0a96d; /* Deep Autumn Gold */
+            --border-glow: rgba(214, 40, 57, 0.15);
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         * {
@@ -33,38 +34,26 @@
             position: relative;
         }
 
-        /* Custom Premium Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(79, 172, 254, 0.3);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-cyan);
-        }
+        /* Custom Scrollbar to match theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: rgba(214, 40, 57, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-maroon); }
 
-        /* Fixed Interactive Navigation Bar */
+        /* Floating Luxury Navigation Bar */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; width: 100%;
             z-index: 100;
-            background: rgba(3, 7, 12, 0.4);
+            background: rgba(10, 4, 6, 0.4);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 15px 0;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 16px 0;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 90%;
             margin: 0 auto;
             display: flex;
@@ -76,7 +65,7 @@
             font-weight: 800;
             font-size: 1.1rem;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            background: linear-gradient(135deg, var(--accent-maroon), var(--accent-nude));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -95,269 +84,232 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-cyan);
-        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-maroon); }
 
-        /* Ambient Dynamic Background Glows */
-        .glow-sphere {
+        /* Velvet & Nude Ambient Background Lighting */
+        .ambient-glow {
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 700px;
+            height: 700px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(214, 40, 57, 0.07) 0%, rgba(230, 204, 178, 0.02) 50%, rgba(0, 0, 0, 0) 70%);
             z-index: -1;
-            filter: blur(80px);
+            filter: blur(90px);
             pointer-events: none;
         }
-        #glow-1 { top: -10%; left: -15%; }
-        #glow-2 { top: 50%; right: -15%; }
+        #glow-1 { top: -15%; left: -10%; }
+        #glow-2 { bottom: 5%; right: -10%; }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 90%;
             margin: 0 auto;
             padding: 140px 0 60px 0;
         }
 
-        section {
-            padding: 60px 0;
-        }
-
-        /* Hero Layout */
-        .hero {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .badge-container {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-
+        /* Hero Profile Banner */
+        .hero { margin-bottom: 50px; }
+        
+        .badge-wrapper { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
         .badge {
-            background: linear-gradient(135deg, rgba(79, 172, 254, 0.08), rgba(0, 242, 254, 0.08));
-            border: 1px solid rgba(79, 172, 254, 0.4);
-            color: var(--accent-cyan);
-            padding: 6px 16px;
+            background: rgba(214, 40, 57, 0.08);
+            border: 1px solid rgba(214, 40, 57, 0.35);
+            color: var(--accent-nude);
+            padding: 6px 14px;
             border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-
-        .badge.gold {
-            border-color: rgba(255, 215, 0, 0.4);
-            color: var(--accent-gold);
-        }
+        .badge.gold { border-color: rgba(224, 169, 109, 0.4); color: var(--accent-gold); background: rgba(224, 169, 109, 0.05); }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             letter-spacing: -2px;
             line-height: 1.1;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #ffffff 30%, #a5c7f7 100%);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent-nude) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            color: var(--text-secondary);
-            font-size: 1.25rem;
-            line-height: 1.8;
-            max-width: 800px;
-        }
+        .hero p { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; max-width: 750px; }
 
-        /* Interactive Stats Dashboard Layer */
-        .stats-grid {
+        /* Premium Dashboard Counters */
+        .metrics-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin: 40px 0;
+            margin-bottom: 60px;
         }
 
-        .stat-box {
+        .metric-card {
             background: rgba(255, 255, 255, 0.01);
             border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 16px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .stat-box:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 242, 254, 0.2);
-        }
-
-        .stat-box h3 {
-            font-size: 2.5rem;
+        .metric-card h3 {
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 5px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            background: linear-gradient(135deg, var(--accent-maroon), var(--accent-nude));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
         }
 
-        .stat-box p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
+        .metric-card p { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Section Headings */
-        .section-title {
-            font-size: 1.2rem;
+        /* Structural Grid Heading */
+        .timeline-title {
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 2px;
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
-        .section-title::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: linear-gradient(90deg, rgba(79, 172, 254, 0.2), transparent);
+        .timeline-title::after {
+            content: ''; flex-grow: 1; height: 1px;
+            background: linear-gradient(90deg, rgba(214, 40, 57, 0.25), transparent);
         }
 
-        /* Advanced Glassmorphic Bento Grid */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
+        .timeline-stack { display: flex; flex-direction: column; gap: 40px; }
 
-        /* Spotlight-Capable Interactive Card Layout */
-        .glow-card {
+        /* Luxury Bento Card Hubs */
+        .repo-hub-card {
             background: var(--bg-surface);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 20px;
-            padding: 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 40px;
             position: relative;
             overflow: hidden;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
         }
 
-        /* Cursor light tracking layer */
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(0, 242, 254, 0.06), transparent 40%);
-            z-index: 1;
-            pointer-events: none;
+        /* Velvet spotlight mouse-tracking glow */
+        .repo-hub-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(214, 40, 57, 0.12), transparent 40%);
+            z-index: 1; pointer-events: none;
         }
 
-        .card-content {
-            position: relative;
-            z-index: 2;
+        .repo-hub-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(214, 40, 57, 0.35);
+            background: rgba(36, 16, 22, 0.6);
         }
 
-        .card-top {
+        .repo-content { position: relative; z-index: 2; }
+
+        .repo-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding-bottom: 15px;
         }
 
-        .glow-card h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.5px;
+        .repo-title-block { display: flex; align-items: center; gap: 12px; }
+        
+        .repo-icon {
+            width: 20px; height: 20px; color: var(--accent-maroon);
+            fill: currentColor;
         }
 
-        .glow-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .repo-hub-card h2 {
+            font-size: 2rem; font-weight: 800; letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 60%, var(--accent-nude) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            transition: color 0.3s;
+        }
+        .repo-hub-card:hover h2 {
+            background: none; -webkit-text-fill-color: initial; color: var(--accent-maroon);
         }
 
-        .meta-tag {
-            background: rgba(255, 215, 0, 0.08);
-            color: var(--accent-gold);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
+        .repo-link-btn {
+            font-size: 0.85rem; color: var(--accent-nude); font-weight: 600;
+            display: flex; align-items: center; gap: 6px;
+            transition: color 0.3s;
+        }
+        .repo-link-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform 0.3s; }
+        .repo-hub-card:hover .repo-link-btn svg { transform: translateX(4px); stroke: var(--accent-maroon); }
+        .repo-hub-card:hover .repo-link-btn { color: var(--accent-maroon); }
+
+        .repo-description {
+            color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; max-width: 850px;
         }
 
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            position: relative;
-            z-index: 2;
+        /* Embedded Inner-Bento Subsections */
+        .sub-milestones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; margin-bottom: 30px;
         }
 
+        .milestone-box {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 14px; padding: 20px;
+        }
+        .milestone-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .milestone-box h4 { font-size: 1.1rem; font-weight: 700; color: #ffffff; }
+        
+        .milestone-tag {
+            background: rgba(224, 169, 109, 0.08); color: var(--accent-gold);
+            border: 1px solid rgba(224, 169, 109, 0.2);
+            padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+        }
+        .milestone-box p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Technology Pill Layouts */
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
         .tag-cloud span {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            color: #a5c7f7;
-            font-family: monospace;
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; color: var(--accent-nude); font-family: monospace;
         }
 
-        /* Footer Alignment */
+        /* Luxury Layout Footer Layer */
         footer {
-            margin-top: 80px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+            margin-top: 80px; border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 40px 0; text-align: center; color: var(--text-secondary); font-size: 0.9rem;
         }
+        footer a { color: var(--accent-maroon); text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; color: var(--text-primary); }
 
-        footer a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            margin-left: 10px;
-        }
-        footer a:hover { text-decoration: underline; }
-
-        /* Responsiveness adjustments */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .nav-links { display: none; } /* Kept simple for raw code mobile view */
-            .bento-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.6rem; }
+            .nav-links { display: none; }
+            .repo-hub-card { padding: 25px; }
+            .metrics-bar { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="glow-sphere" id="glow-1"></div>
-    <div class="glow-sphere" id="glow-2"></div>
+    <div class="ambient-glow" id="glow-1"></div>
+    <div class="ambient-glow" id="glow-2"></div>
 
-    <nav id="navbar">
+    <nav>
         <div class="nav-container">
             <div class="logo">NAIM.DE</div>
             <ul class="nav-links">
                 <li><a href="#about" class="nav-item active">About</a></li>
-                <li><a href="#metrics" class="nav-item">Metrics</a></li>
-                <li><a href="#projects" class="nav-item">Systems</a></li>
-                <li><a href="#achievements" class="nav-item">Achievements</a></li>
+                <li><a href="#year1" class="nav-item">Year 1</a></li>
+                <li><a href="#year2" class="nav-item">Year 2</a></li>
+                <li><a href="#year3" class="nav-item">Year 3</a></li>
             </ul>
         </div>
     </nav>
@@ -365,216 +317,230 @@
     <div class="container">
         
         <section id="about" class="hero">
-            <div class="badge-container">
+            <div class="badge-wrapper">
                 <span class="badge">Computer Science (Data Engineering)</span>
                 <span class="badge gold">UTM Merit Scholar</span>
             </div>
-            <h1 id="typing-text">Hi, I'm Muhammad Naim</h1>
-            <p>Undergraduate Data Engineer at Universiti Teknologi Malaysia[cite: 10, 11]. Dedicated to building high-performance backend processing pipelines, structural relational databases, and enterprise data visualization software with meticulous optimization[cite: 3, 7, 22, 43].</p>
+            <h1 id="dynamic-title">Hi, I'm Muhammad Naim</h1>
+            <p>Undergraduate specialization student at Universiti Teknologi Malaysia. Engineering optimized data logic environments, handling distributed clusters, and organizing clean data-driven pipelines architecture.</p>
         </section>
 
-        <section id="metrics">
-            <h2 class="section-title">Academic & Domain Metrics</h2>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <h3>3.93</h3>
-                    <p>UTM CGPA [cite: 12]</p>
-                </div>
-                <div class="stat-box">
-                    <h3>4.00</h3>
-                    <p>Matriculation GPA [cite: 17]</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Gold</h3>
-                    <p>DICE 3.0 Engineering [cite: 47]</p>
-                </div>
-                <div class="stat-box">
-                    <h3>1st</h3>
-                    <p>Enovation Challenge [cite: 55]</p>
-                </div>
+        <section class="metrics-bar">
+            <div class="metric-card">
+                <h3>3.93</h3>
+                <p>UTM CGPA</p>
+            </div>
+            <div class="metric-card">
+                <h3>4.00</h3>
+                <p>Matriculation GPA</p>
+            </div>
+            <div class="metric-card">
+                <h3>Gold Medal</h3>
+                <p>DICE 3.0 Engineering</p>
+            </div>
+            <div class="metric-card">
+                <h3>1st Place</h3>
+                <p>Enovation Challenge</p>
             </div>
         </section>
 
-        <section id="projects">
-            <h2 class="section-title">Production Systems & Game Engines</h2>
-            <div class="bento-grid">
-                
-                <div class="glow-card">
-                    <div class="card-content">
-                        <div class="card-top">
-                            <h4>KADA Cooperative System</h4>
-                        </div>
-                        <p>Led development lifecycle orchestration for a web application automation framework featuring high-security membership registration pipelines and multi-module loan calculation subsystems[cite: 21, 23].</p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span>PHP</span>
-                        <span>Python</span>
-                        <span>HTML5</span>
-                        <span>System Logic</span>
-                    </div>
-                </div>
+        <main>
+            <h3 class="timeline-title">Academic Architecture & Repositories</h3>
+            <div class="timeline-stack">
 
-                <div class="glow-card">
-                    <div class="card-content">
-                        <div class="card-top">
-                            <h4>Big Fish Interactive Engine</h4>
+                <a href="https://github.com/namson256/1YEAR" target="_blank" class="repo-hub-card" id="year1">
+                    <div class="repo-content">
+                        <div class="repo-header">
+                            <div class="repo-title-block">
+                                <svg class="repo-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-3H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
+                                <h2>01 // 1YEAR</h2>
+                            </div>
+                            <span class="repo-link-btn">Explore Codebase <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                         </div>
-                        <p>Architected an interactive system within Unity[cite: 26]. Managed asset pipeline compilation, runtime engine loop debugging, and low-latency interaction processing to ensure consistent baseline optimization[cite: 28].</p>
+                        <p class="repo-description">Laying down foundational systems architecture, algorithmic reasoning, dynamic asset processing logic, and complex structural system computations.</p>
+                        
+                        <div class="sub-milestones">
+                            <div class="milestone-box">
+                                <div class="milestone-top">
+                                    <h4>Big Fish Core Project</h4>
+                                    <span class="milestone-tag">Engine Dev</span>
+                                </div>
+                                <p>Designed a low-latency interactive game loop logic structure utilizing Unity game engine tools and strict execution profiling.</p>
+                            </div>
+                            <div class="milestone-box">
+                                <div class="milestone-top">
+                                    <h4>Matriculation Baseline</h4>
+                                    <span class="milestone-tag">4.00 GPA</span>
+                                </div>
+                                <p>Graduated Melaka Matriculation College with maximum scoring index parameters across analytical sciences.</p>
+                            </div>
+                        </div>
+
+                        <div class="tag-cloud">
+                            <span>C++</span>
+                            <span>Discrete Structure</span>
+                            <span>Computational Logic</span>
+                            <span>Unity Engine</span>
+                            <span>C#</span>
+                        </div>
                     </div>
-                    <div class="tag-cloud">
-                        <span>Unity</span>
-                        <span>C#</span>
-                        <span>Graphic Pipelines</span>
-                        <span>Asset Optimization</span>
+                </a>
+
+                <a href="https://github.com/namson256/2YEAR" target="_blank" class="repo-hub-card" id="year2">
+                    <div class="repo-content">
+                        <div class="repo-header">
+                            <div class="repo-title-block">
+                                <svg class="repo-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-3H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
+                                <h2>02 // 2YEAR</h2>
+                            </div>
+                            <span class="repo-link-btn">Explore Codebase <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                        <p class="repo-description">Transitioning into relational structural databases, pipeline construction scripts, automated enterprise applications, and multi-module systems logic integration.</p>
+                        
+                        <div class="sub-milestones">
+                            <div class="milestone-box">
+                                <div class="milestone-top">
+                                    <h4>KADA Cooperative App</h4>
+                                    <span class="milestone-tag">Lead Dev</span>
+                                </div>
+                                <p>Architected multi-module systems automation handling financial loan requests, secure verification, and member registries via PHP/Python pipelines.</p>
+                            </div>
+                            <div class="milestone-box">
+                                <div class="milestone-top">
+                                    <h4>Business Enovation</h4>
+                                    <span class="milestone-tag">🏆 1st Place</span>
+                                </div>
+                                <p>Won championship ranking for designing a smart software matching network framework targeting student resource allocation.</p>
+                            </div>
+                        </div>
+
+                        <div class="tag-cloud">
+                            <span>Python</span>
+                            <span>Data Structures</span>
+                            <span>Database Systems</span>
+                            <span>SQL Automation</span>
+                            <span>PHP Pipelines</span>
+                        </div>
                     </div>
-                </div>
+                </a>
+
+                <a href="https://github.com/namson256/3YEAR" target="_blank" class="repo-hub-card" id="year3">
+                    <div class="repo-content">
+                        <div class="repo-header">
+                            <div class="repo-title-block">
+                                <svg class="repo-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-3H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
+                                <h2>03 // 3YEAR</h2>
+                            </div>
+                            <span class="repo-link-btn">Explore Codebase <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                        </div>
+                        <p class="repo-description">Deploying production analytics architectures, parsing high-scale government metrics clusters, cloud engineering management, and large-scale dashboard deployment.</p>
+                        
+                        <div class="sub-milestones">
+                            <div class="milestone-box">
+                                <div class="milestone-top">
+                                    <h4>MDIT X DOSM Datathon</h4>
+                                    <span class="milestone-tag">Analytics Win</span>
+                                </div>
+                                <p>Constructed interactive wealth distribution visualization matrices mapping B40/M40/T20 clusters using Strategic One systems.</p>
+                            </div>
+                            <div class="milestone-box">
+                                <div class="milestone-top">
+                                    <h4>DICE 3.0 Development</h4>
+                                    <span class="milestone-tag">🥇 Gold Medal</span>
+                                </div>
+                                <p>Awarded top honor distinctions recognizing high runtime optimization metrics and outstanding software design complexity.</p>
+                            </div>
+                            <div class="milestone-box">
+                                <div class="milestone-top">
+                                    <h4>Skill2Work Microsoft</h4>
+                                    <span class="milestone-tag">Certified</span>
+                                </div>
+                                <p>Earned official credentials specializing in computer science parameters, cloud scaling systems, and data center operations.</p>
+                            </div>
+                        </div>
+
+                        <div class="tag-cloud">
+                            <span>Big Data Analytics</span>
+                            <span>Cloud Infrastructure</span>
+                            <span>Strategic One Dashboarding</span>
+                            <span>Data Centers</span>
+                            <span>Distributed Computing</span>
+                        </div>
+                    </div>
+                </a>
 
             </div>
-        </section>
+        </main>
 
-        <section id="achievements">
-            <h2 class="section-title">Championship Competitions & Credentials</h2>
-            <div class="bento-grid">
-
-                <div class="glow-card">
-                    <div class="card-content">
-                        <div class="card-top">
-                            <h4>Business Enovation Challenge</h4>
-                            <span class="meta-tag">🏆 1st Place</span>
-                        </div>
-                        <p>Designed a centralized architectural framework mapping academic hackathons, venture capital funding channels, and corporate grants directly to students[cite: 54, 55].</p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span>Innovation Tech</span>
-                        <span>System Architecture</span>
-                    </div>
-                </div>
-
-                <div class="glow-card">
-                    <div class="card-content">
-                        <div class="card-top">
-                            <h4>DICE 3.0 Exhibition</h4>
-                            <span class="meta-tag">🥇 Gold Medal</span>
-                        </div>
-                        <p>Awarded a top-tier Gold Medal honors ranking for outstanding execution accuracy and exceptional system engine interaction within specialized environments[cite: 47].</p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span>Interactive Engineering</span>
-                        <span>Logic Design</span>
-                    </div>
-                </div>
-
-                <div class="glow-card">
-                    <div class="card-content">
-                        <div class="card-top">
-                            <h4>MDIT X DOSM Datathon</h4>
-                            <span class="meta-tag">📊 Data Insights</span>
-                        </div>
-                        <p>Parsed regional macroeconomic metrics to develop user-friendly analytics visualization dashboards analyzing systemic wealth disparity models across socioeconomic structures[cite: 42, 43].</p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span>Strategic One</span>
-                        <span>Data Visualization</span>
-                        <span>Analytics</span>
-                    </div>
-                </div>
-
-                <div class="glow-card">
-                    <div class="card-content">
-                        <div class="card-top">
-                            <h4>Skill2Work Certification</h4>
-                            <span class="meta-tag">💻 Microsoft</span>
-                        </div>
-                        <p>Acquired certified expertise in computer science principles, high-scale digital architecture infrastructure, and underlying physical data center hardware systems operations[cite: 50, 51].</p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span>Cloud Infrastructure</span>
-                        <span>Data Center Ops</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <footer id="contact">
-            <p>Connect Securely: 
-                <a href="mailto:naim20600@gmail.com">naim20600@gmail.com [cite: 4]</a> | 
-                <a href="tel:+60122287866">+60 12-228-7866 [cite: 2]</a>
+        <footer>
+            <p>Network Terminals: 
+                <a href="mailto:naim20600@gmail.com">naim20600@gmail.com</a> | 
+                <a href="tel:+60122287866">+60 12-228-7866</a>
             </p>
         </footer>
-
     </div>
 
     <script>
-        // 1. Futuristic Cursor-Tracking Spotlight Effect
-        const cards = document.querySelectorAll('.glow-card');
+        // 1. Mouse Spotlight Tracker Controller (Updated to Maroon Velvet Beam)
+        const cards = document.querySelectorAll('.repo-hub-card');
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
 
-        // 2. Active Navigation Highlight Tracking during scrolling
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-item');
+        // 2. Active Scroll Item Selector Tracking
+        const trackedItems = document.querySelectorAll('.repo-hub-card, .hero');
+        const items = document.querySelectorAll('.nav-item');
 
         window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
+            let activeId = '';
+            trackedItems.forEach(block => {
+                const blockTop = block.offsetTop;
+                if (pageYOffset >= (blockTop - 220)) {
+                    activeId = block.getAttribute('id');
                 }
             });
 
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href').slice(1) === current) {
-                    item.classList.add('active');
+            items.forEach(navLink => {
+                navLink.classList.remove('active');
+                if (navLink.getAttribute('href').slice(1) === activeId) {
+                    navLink.classList.add('active');
                 }
             });
         });
 
-        // 3. Dynamic Terminal-style Typing Text Swap Array
-        const typingElement = document.getElementById('typing-text');
-        const titles = ["Hi, I'm Muhammad Naim", "Hi, I'm a Data Engineer", "Hi, I Build Big Data Systems"];
-        let titleIndex = 0;
-        let charIndex = titles[titleIndex].length;
-        let isDeleting = false;
+        // 3. Terminal Style Header Array Typer 
+        const label = document.getElementById('dynamic-title');
+        const arrays = ["Hi, I'm Muhammad Naim", "Hi, I'm a Data Engineer", "Hi, I Build Large-Scale Systems"];
+        let count = 0; let characterCount = arrays[count].length; let deletionFlag = false;
 
-        function typeEffect() {
-            const currentTitle = titles[titleIndex];
-            
-            if (isDeleting) {
-                typingElement.innerHTML = currentTitle.substring(0, charIndex - 1);
-                charIndex--;
+        function runTyper() {
+            const currentString = arrays[count];
+            if (deletionFlag) {
+                label.innerHTML = currentString.substring(0, characterCount - 1);
+                characterCount--;
             } else {
-                typingElement.innerHTML = currentTitle.substring(0, charIndex + 1);
-                charIndex++;
+                label.innerHTML = currentString.substring(0, characterCount + 1);
+                characterCount++;
             }
 
-            let typeSpeed = isDeleting ? 40 : 80;
+            let typeVelocity = deletionFlag ? 30 : 60;
 
-            if (!isDeleting && charIndex === currentTitle.length) {
-                typeSpeed = 2000; // Pause at the full title string
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                titleIndex = (titleIndex + 1) % titles.length;
-                typeSpeed = 3000; // Brief pause before typing next title
+            if (!deletionFlag && characterCount === currentString.length) {
+                typeVelocity = 2500; deletionFlag = true;
+            } else if (deletionFlag && characterCount === 0) {
+                deletionFlag = false;
+                count = (count + 1) % arrays.length;
+                typeVelocity = 2000;
             }
-
-            setTimeout(typeEffect, typeSpeed);
+            setTimeout(runTyper, typeVelocity);
         }
-        
-        // Unleash the text rotation engine
-        setTimeout(typeEffect, 1500);
+        setTimeout(runTyper, 1200);
     </script>
 </body>
 </html>
