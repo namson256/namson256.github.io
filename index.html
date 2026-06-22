@@ -159,8 +159,6 @@
             color: var(--text-main);
         }
 
-        .hero-layout h1 span { color: var(--accent-maroon); }
-
         .hero-layout p {
             font-size: 1.2rem;
             line-height: 1.7;
@@ -215,7 +213,8 @@
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.2);
         }
 
-        .cheerful-card:hover {
+        .cheerful-card:not(a) { cursor: default; }
+        a.cheerful-card:hover {
             transform: translateY(-6px) scale(1.01);
             border-color: rgba(176, 30, 49, 0.2);
         }
@@ -247,7 +246,7 @@
         .cheerful-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; }
 
         /* Tech Tags Cloud */
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 2; }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 2; margin-top: auto; }
         .tag-cloud span {
             background: #f7f3eb;
             padding: 6px 14px;
@@ -259,22 +258,14 @@
 
         /* SECTION 2: Academic Repos Specific Layout */
         .repo-card { border-left: 6px solid var(--accent-maroon); }
-        .repo-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin: 15px 0 8px 0; }
-        
-        .nested-bullet {
-            font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;
-            margin-bottom: 15px; padding-left: 15px; position: relative;
-        }
-        .nested-bullet::before {
-            content: '•'; color: var(--accent-maroon); position: absolute; left: 0; font-weight: bold;
-        }
+        .repo-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
 
         .repo-footer-btn {
             font-size: 0.85rem; font-weight: 700; color: var(--accent-maroon);
-            display: flex; align-items: center; gap: 5px; margin-top: 15px;
+            display: flex; align-items: center; gap: 5px; margin-top: 25px;
         }
         .repo-footer-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.2s; }
-        .cheerful-card:hover .repo-footer-btn svg { transform: translateX(5px); }
+        a.cheerful-card:hover .repo-footer-btn svg { transform: translateX(5px); }
 
         /* Footer Element */
         footer {
@@ -335,8 +326,8 @@
                     <p>DICE 3.0 Honors</p>
                 </div>
                 <div class="metric-card">
-                    <h3>1st</h3>
-                    <p>Enovation Challenge</p>
+                    <h3>Microsoft</h3>
+                    <p>Skill2Work Certified</p>
                 </div>
             </div>
         </section>
@@ -351,51 +342,65 @@
                 
                 <a href="https://github.com/namson256/1YEAR" target="_blank" class="cheerful-card repo-card">
                     <div class="card-body">
-                        <span class="card-tag">Freshman Stack</span>
+                        <span class="card-tag">Year 1 Baseline</span>
                         <h3>01 // 1YEAR Repository</h3>
-                        <p>Constructed base algorithmic logic engines, runtime environment parameters, and dynamic asset handling patterns while scoring maximum engineering indexes.</p>
+                        <p>Established a deep foundational knowledge in algorithmic computing, logical hardware structures, human interface patterns, and baseline systems analysis workflows alongside critical scientific data probability assessments.</p>
                         
-                        <h4>Key Course Highlight:</h4>
-                        <div class="nested-bullet">Graduated from Melaka Matriculation College tracking an absolute 4.00 analytical science score baseline.</div>
+                        <h4>Core Subjects Completed:</h4>
                     </div>
                     <div class="tag-cloud">
-                        <span>C++</span>
-                        <span>Computational Logic</span>
-                        <span>Discrete Structures</span>
+                        <span>Discrete Structure</span>
+                        <span>Programming Technique I</span>
+                        <span>Technology and Information System</span>
+                        <span>Digital Logic</span>
+                        <span>Probability & Statistical Data Analysis</span>
+                        <span>Programming Technique II</span>
+                        <span>System Analysis and Design WBL</span>
+                        <span>Computer Organization and Architecture</span>
+                        <span>Human Computer Interaction</span>
                     </div>
                     <div class="repo-footer-btn">Launch GitHub Repo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </a>
 
                 <a href="https://github.com/namson256/2YEAR" target="_blank" class="cheerful-card repo-card">
                     <div class="card-body">
-                        <span class="card-tag">Sophomore Pipelines</span>
+                        <span class="card-tag">Year 2 Intermediate</span>
                         <h3>02 // 2YEAR Repository</h3>
-                        <p>Transitioned directly into organizing complex logical arrays, custom operational structures, multi-module backend layers, and normalized schema models.</p>
+                        <p>Transitioned into advanced object-oriented development methodologies, underlying database engines, and structural programming algorithms while discovering core trends through comprehensive data mining, data analytics programming, and low-level operating system architectures.</p>
                         
-                        <h4>Key Course Highlight:</h4>
-                        <div class="nested-bullet">Focused on advanced relational environment management, object programming systems, and cross-functional scripting.</div>
+                        <h4>Core Subjects Completed:</h4>
                     </div>
                     <div class="tag-cloud">
-                        <span>Python</span>
-                        <span>SQL Schemas</span>
-                        <span>Data Structures</span>
+                        <span>Data Structures And Algorithms</span>
+                        <span>Database WBL</span>
+                        <span>Software Engineering WBL</span>
+                        <span>System Development Technology</span>
+                        <span>Network Communications</span>
+                        <span>Technopreneurship Seminar</span>
+                        <span>Object Oriented Programming</span>
+                        <span>Data Mining</span>
+                        <span>Data Analytics Programming</span>
+                        <span>Operating Systems</span>
                     </div>
                     <div class="repo-footer-btn">Launch GitHub Repo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </a>
 
                 <a href="https://github.com/namson256/3YEAR" target="_blank" class="cheerful-card repo-card">
                     <div class="card-body">
-                        <span class="card-tag">Junior Big Data Architecture</span>
+                        <span class="card-tag">Year 3 Core Engineering</span>
                         <h3>03 // 3YEAR Repository</h3>
-                        <p>Specializing in production metrics analytics orchestration, distributed data engineering environments, cluster monitoring operations, and web dashboards.</p>
+                        <p>Specializing in modern enterprise layout architecture, high-performance distributed data clustering operations, business intelligence systems, artificial intelligence mechanics, and bespoke application development parameters.</p>
                         
-                        <h4>Key Course Highlight:</h4>
-                        <div class="nested-bullet">Deploying live corporate visualization platforms and tracking system throughput processing optimization.</div>
+                        <h4>Core Subjects Completed:</h4>
                     </div>
                     <div class="tag-cloud">
-                        <span>Big Data Systems</span>
-                        <span>Cloud Infrastructure</span>
-                        <span>Distributed Logic</span>
+                        <span>Artificial Intelligence</span>
+                        <span>Database Programming</span>
+                        <span>Enterprise System Design And Modeling WBL</span>
+                        <span>Application Development WBL</span>
+                        <span>High Performance Data Processing</span>
+                        <span>Business Intelligence</span>
+                        <span>Special Topic In Data Engineering</span>
                     </div>
                     <div class="repo-footer-btn">Launch GitHub Repo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
                 </a>
@@ -449,18 +454,6 @@
                 <div class="line"></div>
             </div>
             <div class="bento-grid">
-
-                <div class="cheerful-card">
-                    <div class="card-body">
-                        <span class="card-tag gold-tag">🏆 First Place Winner</span>
-                        <h3>Business Enovation Challenge</h3>
-                        <p>Designed a centralized architectural software platform intentionally aligning students directly to competitive technological hackathons, venture capital grant systems, and corporate funding pipelines.</p>
-                    </div>
-                    <div class="tag-cloud">
-                        <span>System Architecture</span>
-                        <span>Innovation Tech</span>
-                    </div>
-                </div>
 
                 <div class="cheerful-card">
                     <div class="card-body">
